@@ -11,7 +11,7 @@
     baseRustcOpts =
       [
         (if release then "-C opt-level=3" else "-C debuginfo=2")
-        "-C codegen-units=$NIX_BUILD_CORES"
+        "-C codegen-units=1"
         "--remap-path-prefix=$NIX_BUILD_TOP=/"
         (mkRustcDepArgs dependencies crateRenames)
         (mkRustcFeatureArgs crateFeatures)
